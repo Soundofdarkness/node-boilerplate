@@ -1,0 +1,67 @@
+{
+    "name": "boilerplate",
+    "version": "1.0.0",
+    "description": "Simple boilerplate to start a new project with ES6/ES7 support",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha --require @babel/register",
+        "watch": "nodemon --exec babel-node src/index.js",
+        "clean": "babel-node build/clean.js",
+        "build": "babel src --out-dir dist",
+        "prebuild": "babel-node build/clean.js",
+        "start": "node dist/index.js",
+        "prettier": "prettier --write **/*.js",
+        "lint": "eslint src/ build/ test/ --color",
+        "lint:fix": "eslint --fix src/ build/ test/ --color"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Soundofdarkness/node-boilerplate.git"
+    },
+    "keywords": [
+        "Node",
+        "Boilerplate",
+        "Babel"
+    ],
+    "author": "Soundofdarkness",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Soundofdarkness/node-boilerplate/issues"
+    },
+    "homepage": "https://github.com/Soundofdarkness/node-boilerplate#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "@babel/cli": "^7.4.4",
+        "@babel/core": "^7.4.4",
+        "@babel/node": "^7.2.2",
+        "@babel/preset-env": "^7.4.4",
+        "@babel/register": "^7.4.4",
+        "babel-eslint": "^10.0.1",
+        "chai": "^4.2.0",
+        "chalk": "^2.4.2",
+        "eslint": "^5.16.0",
+        "eslint-config-prettier": "^4.2.0",
+        "eslint-plugin-import": "^2.17.2",
+        "eslint-plugin-prettier": "^3.0.1",
+        "husky": "^2.2.0",
+        "lint-staged": "^8.1.5",
+        "mocha": "^6.1.4",
+        "nodemon": "^1.19.0",
+        "prettier": "^1.17.0",
+        "pretty-quick": "^1.10.0",
+        "rimraf": "^2.6.3"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "pre-push": "node ./node_modules/mocha/bin/mocha --require @babel/register"
+        }
+    },
+    "lint-staged": {
+        "*.js": [
+            "eslint",
+            "pretty-quick --staged",
+            "git add"
+        ]
+    }
+}
