@@ -1,4 +1,4 @@
-# Node ES6/ES7 Boilerplate
+# Node ES6/ES7 Boilerplate ![GitHub](https://img.shields.io/github/license/Soundofdarkness/node-boilerplate.svg?style=for-the-badge) ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/Soundofdarkness/node-boilerplate.svg?style=for-the-badge) ![GitHub issues](https://img.shields.io/github/issues/Soundofdarkness/node-boilerplate.svg?style=for-the-badge) 
 
 Yet another boilerplate for NodeJS projects.
 We use Babel for transpiling and Mocha/Chai for testing and prettier/eslint for linting and fixing code style.
